@@ -66,3 +66,15 @@ Add the following to `package.json`
 
 - Create `src/index.css` and add the line `import './index.css';` to `./src/index.js`
 - Add line `"plugins": ["@babel/plugin-proposal-class-properties"]` to `.babelrc`
+
+### Issues for now
+
+Webpack do not parse .css yet, make sure run `npm i -D style-loader css-loader postcss-loader` and adding this to `.webpack.config.js`
+
+```javascript
+  {
+    test: /\.css$/i,
+    include: path.resolve(__dirname, "src"),
+    use: ["style-loader", "css-loader", "postcss-loader"],
+  },
+```
