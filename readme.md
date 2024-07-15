@@ -15,3 +15,25 @@
 ```
 
 - Create a Babel configuration file -> named `.babelrc`
+
+## Add Linting and Prettier
+
+Install package
+
+`npm install --save-dev eslint prettier eslint-config-prettier eslint-plugin-prettier eslint-plugin-react eslint-plugin-react-hooks @babel/eslint-parser`
+
+Add the `.eslintrc.js`
+
+Add the `.prettierrc.js`
+
+Add the following to `package.json`
+
+```json
+"scripts": {
+  "start": "webpack serve --mode development",
+  "build": "webpack --mode production",
+  "lint": "eslint src/**/*.{js,jsx}",
+  "lint:fix": "eslint src/**/*.{js,jsx} --fix",
+  "format": "prettier --write src/**/*.{js,jsx,css,scss}"
+}
+```
